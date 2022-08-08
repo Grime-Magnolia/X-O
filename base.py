@@ -37,14 +37,16 @@ class bke():
             if self.geweest[a] == 0:
                 if (self.beurt % 2) == 0:
                     button.config(text='O')
+                    button.config(bg='red')
                     self.procces[a] = 'O'
                 else:
                     button.config(text='X')
                     self.procces[a] = 'X'
+                    button.config(bg='blue')
                 self.beurt = self.beurt + 1
                 self.geweest[a] = 1
-        button = tkinter.Button(self.frame,text='0',command= change)
-        button.grid(row=self.buttonx[self.counterforbutton],column=self.buttony[self.counterforbutton],padx = 5, pady = 10)
+        button = tkinter.Button(self.frame,text=' ',command= change)
+        button.grid(row=self.buttonx[self.counterforbutton],column=self.buttony[self.counterforbutton],padx = 20, pady = 20)
         self.counterforbutton += 1
 bke = bke()
 for a in range(0,9):
