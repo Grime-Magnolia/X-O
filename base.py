@@ -1,5 +1,4 @@
 import tkinter
-import time
 class bke():
     def __init__(self,X,O):
         self.root = tkinter.Tk()
@@ -18,14 +17,15 @@ class bke():
         self.checkerd2 = [4,4,3,4,5,1,4,7,7]
         self.checkerd3 = [6,8,6,7,8,2,5,8,8]
         self.geweest = []
+        self.frame2 = tkinter.Frame(self.root)
     def summon_window(self):
-        frame2 = tkinter.Frame(self.root)
         scoreO = tkinter.Label(self.frame2,text=f'O won {self.owon} times')
         scoreO.grid(row=0,column=0)
+        justaminus = tkinter.Label(self.frame2,text=' - ').grid(row=0,column=1)
         scoreX = tkinter.Label(self.frame2,text=f'X won {self.xwon} times')
         scoreX.grid(row=0,column=2)
-        frame2.pack
-        self.frame.grid(pady=50,padx=50)
+        self.frame2.pack(pady=20,padx=50)
+        self.frame.pack(pady=20,padx=50)
         def check():
             def passy():
                 self.root.quit()
@@ -62,7 +62,7 @@ class bke():
                 else:
                     button.config(text='X')
                     self.procces[a] = 'X'
-                    button.config(bg='blue')
+                    button.config(bg='green')
                 self.beurt = self.beurt + 1
                 self.geweest[a] = 1
         button = tkinter.Button(self.frame,text=' ',command= change)
