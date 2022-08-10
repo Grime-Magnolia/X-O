@@ -31,7 +31,6 @@ class bke():
                 self.root.quit()
             for a in range(0,8):
                 if self.procces[self.checkerd1[a]] == self.procces[self.checkerd2[a]] == self.procces[self.checkerd3[a]] != 'clear':
-                    print(f'{self.procces[self.checkerd3[a]]} won')
                     label = tkinter.Label(self.frame,text=f'{self.procces[self.checkerd3[a]]} won').grid(row=3,column=0)
                     self.won = 1
                     if self.procces[self.checkerd3[a]] == 'O':
@@ -45,11 +44,8 @@ class bke():
                 self.root.after(100, check)
         self.root.after(100, check)
         self.root.mainloop()
-        print(self.beurt)
-        print(self.procces)
         for a in range(0,8):
             if self.procces[self.checkerd1[a]] == self.procces[self.checkerd2[a]] == self.procces[self.checkerd3[a]] != 'clear':
-                print('won')
                 self.root.destroy()
                 self.root.quit()
     def summon_button(self,a):
@@ -90,12 +86,11 @@ while b != 1:
     b = 1
     if b == 0:
         Bke.root = tkinter.Tk()
-    print('test1')
     for a in range(0,9):
         Bke.geweest.append(0)
         Bke.summon_button(a)
-        print('test2')
     Bke.summon_window()
     choice()
     print(b)
     x,o = Bke.xwon,Bke.owon
+print(f'the final score is:\nO:{Bke.owon}\nX:{Bke.xwon}')
